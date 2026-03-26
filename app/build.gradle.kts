@@ -74,12 +74,12 @@ android {
   buildFeatures {
         compose = true
         viewBinding = true
+    buildConfig = true
     }
     
     composeCompiler {
-        enableStrongSkippingMode = true
         reportsDestination = layout.buildDirectory.dir("compose_compiler")
-        stabilityConfigurationFile = rootProject.layout.projectDirectory.file("stability_config.conf")
+      stabilityConfigurationFiles.add(rootProject.layout.projectDirectory.file("stability_config.conf"))
     }
     
     externalNativeBuild {
@@ -100,85 +100,85 @@ android {
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+  implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    // Compose BOM - manages all Compose library versions
-    implementation(platform(libs.compose.bom))
-    androidTestImplementation(platform(libs.compose.bom))
+  // Compose BOM - manages all Compose library versions
+  implementation(platform(libs.compose.bom))
+  androidTestImplementation(platform(libs.compose.bom))
 
-    // Compose
-    implementation(libs.bundles.compose)
-    debugImplementation(libs.compose.ui.tooling)
-    implementation(libs.compose.material3)
+  // Compose
+  implementation(libs.bundles.compose)
+  debugImplementation(libs.compose.ui.tooling)
+  implementation(libs.compose.material3)
 
-    // Molecule
-    implementation(libs.molecule.runtime)
+  // Molecule
+  implementation(libs.molecule.runtime)
 
-    // Datastore
-    implementation(libs.androidx.datastore.preferences)
+  // Datastore
+  implementation(libs.androidx.datastore.preferences)
 
-    // Accompanist
-    implementation(libs.bundles.accompanist)
+  // Accompanist
+  implementation(libs.bundles.accompanist)
 
-    // Android Core
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.lifecycle.extensions)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+  // Android Core
+  implementation(libs.androidx.core.ktx)
+  implementation(libs.androidx.activity.compose)
+  implementation(libs.androidx.lifecycle.extensions)
+  implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
-    // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics.ktx)
-    implementation(libs.firebase.crashlytics)
-    implementation(libs.firebase.messaging)
+  // Firebase
+  implementation(platform(libs.firebase.bom))
+  implementation(libs.firebase.analytics)
+  implementation(libs.firebase.crashlytics)
+  implementation(libs.firebase.messaging)
 
-    // Google Play Services
-    implementation(libs.play.services.auth)
+  // Google Play Services
+  implementation(libs.play.services.auth)
   implementation(libs.play.review.ktx)
 
-    // Networking
-    implementation(libs.bundles.retrofit)
-    implementation(libs.okhttp.logging.interceptor)
-    implementation(libs.persistent.cookie.jar)
+  // Networking
+  implementation(libs.bundles.retrofit)
+  implementation(libs.okhttp.logging.interceptor)
+  implementation(libs.persistent.cookie.jar)
 
-    // Serialization
-    implementation(libs.moshi.kotlin)
-    implementation(libs.moshi.adapters)
+  // Serialization
+  implementation(libs.moshi.kotlin)
+  implementation(libs.moshi.adapters)
 
-    // Work Manager
-    implementation(libs.bundles.work)
+  // Work Manager
+  implementation(libs.bundles.work)
 
-    // Room Database
-    implementation(libs.bundles.room)
-    ksp(libs.room.compiler)
+  // Room Database
+  implementation(libs.bundles.room)
+  ksp(libs.room.compiler)
 
-    // Dependency Injection
-    implementation(libs.bundles.koin)
+  // Dependency Injection
+  implementation(libs.bundles.koin)
 
-    // Image Loading
-    implementation(libs.coil.compose)
+  // Image Loading
+  implementation(libs.coil.compose)
 
-    implementation(libs.navigation.compose)
+  implementation(libs.navigation.compose)
 
   // Material (provides Theme.Material3.* XML theme attributes)
-    implementation(libs.material)
+  implementation(libs.material)
 
-    // Utility Libraries
-    implementation(libs.immutable.collections)
-    implementation(libs.markwon)
-    implementation(libs.jsoup)
-    implementation(libs.billing.ktx)
-    implementation(libs.mp.android.chart)
+  // Utility Libraries
+  implementation(libs.immutable.collections)
+  implementation(libs.markwon)
+  implementation(libs.jsoup)
+  implementation(libs.billing.ktx)
+  implementation(libs.mp.android.chart)
 
-    // Core Library Desugaring
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
+  // Core Library Desugaring
+  coreLibraryDesugaring(libs.desugar.jdk.libs)
 
-    // Testing Dependencies
-    implementation(libs.espresso.idling.resource)
+  // Testing Dependencies
+  implementation(libs.espresso.idling.resource)
 
-    // Unit Testing
-    testImplementation(libs.bundles.testing)
+  // Unit Testing
+  testImplementation(libs.bundles.testing)
 
-    // Android Testing
-    androidTestImplementation(libs.bundles.android.testing)
+  // Android Testing
+  androidTestImplementation(libs.bundles.android.testing)
 }

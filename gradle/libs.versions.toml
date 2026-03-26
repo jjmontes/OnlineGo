@@ -1,8 +1,8 @@
 [versions]
 # Kotlin & Android
-datastorePreferences = "1.2.0"
-kotlin = "2.3.10"
-androidGradlePlugin = "8.13.2"
+datastorePreferences = "1.2.1"
+kotlin = "2.3.20"
+androidGradlePlugin = "9.0.1"
 composeCompiler = "1.5.4"
 compileSdk = "36"
 minSdk = "23"
@@ -11,17 +11,17 @@ targetSdk = "36"
 ndkVersion = "25.1.8937393"
 
 # Compose BOM
-composeBom = "2026.02.00"
+composeBom = "2026.03.01"
 
 # Main dependencies
-koin = "4.1.1"
-playServices = "21.5.0"
+koin = "4.2.0"
+playServices = "21.5.1"
 accompanist = "0.36.0"
 room = "2.8.4"
-firebase = "33.16.0"
-workManager = "2.11.1"
-androidx-core = "1.17.0"
-androidx-activity = "1.12.4"
+firebase = "34.11.0"
+workManager = "2.11.2"
+androidx-core = "1.18.0"
+androidx-activity = "1.13.0"
 androidx-lifecycle = "2.10.0"
 material3 = "1.4.0-beta03"
 material = "1.13.0"
@@ -57,7 +57,7 @@ coroutinesTest = "1.10.2"
 turbine = "1.2.1"
 
 # Build tools & Plugins
-ksp = "2.2.21-RC-2.0.4"
+ksp = "2.3.6"
 googleServices = "4.4.4"
 crashlytics = "3.0.6"
 molecule = "2.2.0"
@@ -94,7 +94,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 
 # Firebase
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
-firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
 
