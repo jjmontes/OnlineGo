@@ -2,7 +2,7 @@ package io.zenandroid.onlinego.ui.screens.login
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 import androidx.lifecycle.lifecycleScope
 import io.zenandroid.onlinego.data.ogs.OGSRestService
 import io.zenandroid.onlinego.data.repositories.UserSessionRepository
@@ -14,7 +14,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.koin.android.ext.android.inject
 
-class FacebookLoginCallbackActivity : AppCompatActivity() {
+class FacebookLoginCallbackActivity : ComponentActivity() {
 
     private val userSessionRepository: UserSessionRepository by inject()
     private val ogsRestService: OGSRestService by inject()

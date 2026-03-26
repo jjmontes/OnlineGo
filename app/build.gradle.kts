@@ -64,7 +64,6 @@ android {
           jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
           freeCompilerArgs.addAll(
               "-opt-in=androidx.compose.animation.ExperimentalAnimationApi",
-              "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
               "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
               "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
               "-Xjvm-default=all"
@@ -161,9 +160,8 @@ dependencies {
 
     implementation(libs.navigation.compose)
 
-    // UI & Material Design
+  // Material (provides Theme.Material3.* XML theme attributes)
     implementation(libs.material)
-    implementation(libs.legacy.preference.v14)
 
     // Utility Libraries
     implementation(libs.immutable.collections)

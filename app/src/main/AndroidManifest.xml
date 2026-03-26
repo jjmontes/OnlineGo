@@ -52,7 +52,7 @@
             android:name=".ui.screens.login.FacebookLoginCallbackActivity"
             android:noHistory="true"
             android:launchMode="singleInstance"
-            android:theme="@style/Theme.AppCompat.Translucent"
+            android:theme="@style/Theme.OnlineGo.Translucent"
             android:enabled="false"
             android:exported="true"
             >

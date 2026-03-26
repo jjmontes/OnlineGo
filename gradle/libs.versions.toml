@@ -75,7 +75,6 @@ androidx-lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycl
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 
 # Compose (versions managed by BOM)
-compose-material = { group = "androidx.compose.material", name = "material" }
 compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 compose-ui = { group = "androidx.compose.ui", name = "ui" }
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -89,9 +88,9 @@ molecule-runtime = { group = "app.cash.molecule", name = "molecule-runtime", ver
 # Accompanist
 accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist" }
 
-# Material Design & UI
+
+# Material Design (provides Theme.Material3.* XML theme attributes)
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-legacy-preference-v14 = { group = "androidx.legacy", name = "legacy-preference-v14", version = "1.0.0" }
 
 # Firebase
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
@@ -167,7 +166,6 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 [bundles]
 compose = [
-    "compose-material",
     "compose-material-icons-extended",
     "compose-ui",
     "compose-ui-tooling-preview",
