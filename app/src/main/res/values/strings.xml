@@ -5,5 +5,6 @@
     <string name="create_account_prompt">No OGS account? Create one <b>here</b>!</string>
     <string name="login_to_ogs">Login to OGS</string>
     <string name="create_account">Create OGS account</string>
+    <string name="welcome_to_sente_online_go">Welcome to Sente Online Go!</string>
 
 </resources>

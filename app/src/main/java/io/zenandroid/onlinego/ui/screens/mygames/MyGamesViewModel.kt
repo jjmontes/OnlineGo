@@ -1,5 +1,6 @@
 package io.zenandroid.onlinego.ui.screens.mygames
 
+import android.content.Context
 import android.util.Log
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
@@ -7,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import io.zenandroid.onlinego.OnlineGoApplication
+import io.zenandroid.onlinego.R
 import io.zenandroid.onlinego.data.model.local.Challenge
 import io.zenandroid.onlinego.data.model.local.Game
 import io.zenandroid.onlinego.data.model.ogs.ChallengeParams
@@ -66,6 +68,7 @@ import java.util.Locale
 import kotlin.coroutines.cancellation.CancellationException
 
 class MyGamesViewModel(
+  private val context: Context,
   private val userSessionRepository: UserSessionRepository,
   private val finishedGamesRepository: FinishedGamesRepository,
   private val activeGamesRepository: ActiveGamesRepository,
@@ -109,7 +112,7 @@ class MyGamesViewModel(
                 playOnlineEnabled = false,
                 customGameEnabled = false,
                 loginPromptVisible = true,
-                headerMainText = "Welcome to Sente Online Go!",
+                headerMainText = context.getString(R.string.welcome_to_sente_online_go),
                 headerSubText = "Please log in to OGS to play online.",
               )
             }
