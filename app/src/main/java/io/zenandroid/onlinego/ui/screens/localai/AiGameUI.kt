@@ -88,47 +88,59 @@ import io.zenandroid.onlinego.utils.processGravatarURL
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
 import org.koin.androidx.compose.koinViewModel
+import org.koin.core.component.KoinComponent
 import kotlin.math.abs
+import android.content.Context
+import org.koin.core.component.inject
 
 sealed class AiGameBottomBarButton(
   override val icon: androidx.compose.ui.graphics.vector.ImageVector,
-  override val label: String,
   override val repeatable: Boolean = false,
   override val enabled: Boolean = true,
   override val bubbleText: String? = null,
   override val highlighted: Boolean = false
-) : BottomBarButton {
+) : BottomBarButton, KoinComponent {
+  private val context: Context by inject()
+  protected abstract val labelResId: Int
+
+  override val label: String
+    get() = context.getString(labelResId)
+
   data class NewGame(
     override val enabled: Boolean = true
   ) : AiGameBottomBarButton(
     icon = Icons.Filled.Casino,
-    label = "New",
     enabled = enabled
-  )
+  ) {
+    override val labelResId = R.string.ai_game_new
+  }
 
   data class Pass(
     override val enabled: Boolean = true
   ) : AiGameBottomBarButton(
     icon = Icons.Rounded.Stop,
-    label = "Pass",
     enabled = enabled
-  )
+  ) {
+    override val labelResId = R.string.ai_game_pass
+  }
 
   data class Previous(
     override val enabled: Boolean = true
   ) : AiGameBottomBarButton(
     icon = Icons.AutoMirrored.Filled.NavigateBefore,
-    label = "Previous",
     enabled = enabled
-  )
+  ) {
+    override val labelResId = R.string.ai_game_previous
+  }
 
   data class Next(
     override val enabled: Boolean = true
   ) : AiGameBottomBarButton(
     icon = Icons.AutoMirrored.Filled.NavigateNext,
-    label = "Next",
     enabled = enabled
-  )
+  ) {
+    override val labelResId = R.string.ai_game_next
+  }
 }
 
 @Composable

@@ -10,5 +10,9 @@
     <string name="overview_returned_games">overview returned %1$d games</string>
     <string name="found_games_that_are_neither_active_nor_marked_as_finished">Found %1$d games that are neither active nor marked as finished</string>
     <string name="hit_rate_limiter_backing_off_milliseconds">Hit rate limiter backing off %1$d milliseconds</string>
+    <string name="ai_game_new">New</string>
+    <string name="ai_game_pass">Pass</string>
+    <string name="ai_game_previous">Previous</string>
+    <string name="ai_game_next">Next</string>
 
 </resources>
