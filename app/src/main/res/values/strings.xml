@@ -14,5 +14,30 @@
     <string name="ai_game_pass">Pass</string>
     <string name="ai_game_previous">Previous</string>
     <string name="ai_game_next">Next</string>
+    <string name="that_move_would_repeat_the_board_position_that_s_called_a_ko_and_it_is_not_allowed_try_to_make_another_move_first_preferably_a_threat_that_the_opponent_can_t_ignore">That move would repeat the board position. That\'s called a KO, and it is not allowed. Try to make another move first, preferably a threat that the opponent can\'t ignore.</string>
+    <string name="illegal_ko_move">Illegal KO move</string>
+    <string name="local_ai_game">Local AI Game</string>
+    <string name="back">Back</string>
+    <string name="katago">"KataGO "</string>
+    <string name="territory">Territory</string>
+    <string name="hint">Hint</string>
+    <string name="player">Player</string>
+    <string name="you">" You"</string>
+    <string name="prisoners">Prisoners</string>
+    <string name="komi">Komi</string>
+    <string name="white">white</string>
+    <string name="black">black</string>
+    <string name="score_prediction_leads_by">Score prediction: %1$s leads by %2$s</string>
+    <string name="white_s_chance_to_win">White\'s chance to win: %1$s%</string>
+    <string name="new_game">New Game</string>
+    <string name="board_size">Board Size</string>
+    <string name="you_play">You play</string>
+    <string name="Black">Black</string>
+    <string name="White">White</string>
+    <string name="handicap">Handicap</string>
+    <string name="start_game">Start Game</string>
+    <string name="cancel">Cancel</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="landscape_preview">Landscape Preview</string>
 
 </resources>
