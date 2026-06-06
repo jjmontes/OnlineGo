@@ -1,10 +1,8 @@
 package io.zenandroid.onlinego.data.repositories
 
-import android.content.Context
 import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.squareup.moshi.JsonEncodingException
-import io.zenandroid.onlinego.R
 import io.zenandroid.onlinego.data.db.GameDao
 import io.zenandroid.onlinego.data.model.Cell
 import io.zenandroid.onlinego.data.model.local.Clock
@@ -47,7 +45,6 @@ import java.io.IOException
  * Created by alex on 08/11/2017.
  */
 class ActiveGamesRepository(
-  private val context: Context,
   private val restService: OGSRestService,
   private val socketService: OGSWebSocketService,
   private val userSessionRepository: UserSessionRepository,
@@ -68,11 +65,7 @@ class ActiveGamesRepository(
     }
     if (gameDao.getGameNullable(game.id) == null) {
       FirebaseCrashlytics.getInstance()
-        .log(
-          context.getString(
-            R.string.activegamerepository_new_game_found_from_active_game_notification,
-            game.id
-          ))
+        .log("ActiveGameRepository: New game found from active_game notification ${game.id}")
       flowScope.launch {
         try {
           val fetchedGame = retryOnIOException { restService.fetchGame(game.id) }
@@ -360,11 +353,7 @@ class ActiveGamesRepository(
     val games = retryOnIOException { restService.fetchActiveGames() }
     val localGames = games.map(Game.Companion::fromOGSGame)
     gameDao.insertAllGames(localGames)
-    FirebaseCrashlytics.getInstance().log(
-      context.getString(
-        R.string.overview_returned_games,
-        localGames.size
-      ))
+    FirebaseCrashlytics.getInstance().log("overview returned ${localGames.size} games")
     val activeGameIds = localGames.map(Game::id).toSet()
     val finishedGameIds = gameDao.getActiveGameIds(userId) - activeGameIds
     updateGamesThatFinishedSinceLastUpdate(finishedGameIds)
@@ -372,11 +361,7 @@ class ActiveGamesRepository(
 
   private suspend fun updateGamesThatFinishedSinceLastUpdate(gameIds: List<Long>) {
     FirebaseCrashlytics.getInstance()
-      .log(
-        context.getString(
-          R.string.found_games_that_are_neither_active_nor_marked_as_finished,
-          gameIds.size
-        ))
+      .log("Found ${gameIds.size} games that are neither active nor marked as finished")
     val games = mutableListOf<Game>()
     gameIds.forEach {
       var backoffMillis = 10000L
@@ -397,11 +382,7 @@ class ActiveGamesRepository(
           if (e is retrofit2.HttpException && e.code() == 429) {
             FirebaseCrashlytics.getInstance().apply {
               setCustomKey("HIT_RATE_LIMITER", true)
-              log(
-                context.getString(
-                  R.string.hit_rate_limiter_backing_off_milliseconds,
-                  backoffMillis
-                ))
+              log("Hit rate limiter backing off $backoffMillis milliseconds")
             }
             delay(backoffMillis)
             backoffMillis *= 2
