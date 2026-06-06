@@ -96,52 +96,45 @@ import org.koin.core.component.inject
 
 sealed class AiGameBottomBarButton(
   override val icon: androidx.compose.ui.graphics.vector.ImageVector,
+  val labelResId: Int,
+  override val label: String = "",
   override val repeatable: Boolean = false,
   override val enabled: Boolean = true,
   override val bubbleText: String? = null,
   override val highlighted: Boolean = false
-) : BottomBarButton, KoinComponent {
-  private val context: Context by inject()
-  protected abstract val labelResId: Int
+) : BottomBarButton {
 
-  override val label: String
-    get() = context.getString(labelResId)
 
   data class NewGame(
     override val enabled: Boolean = true
   ) : AiGameBottomBarButton(
     icon = Icons.Filled.Casino,
+    labelResId = R.string.ai_game_new,
     enabled = enabled
-  ) {
-    override val labelResId = R.string.ai_game_new
-  }
+  )
 
   data class Pass(
     override val enabled: Boolean = true
   ) : AiGameBottomBarButton(
     icon = Icons.Rounded.Stop,
+    labelResId = R.string.ai_game_pass,
     enabled = enabled
-  ) {
-    override val labelResId = R.string.ai_game_pass
-  }
-
+  )
   data class Previous(
     override val enabled: Boolean = true
   ) : AiGameBottomBarButton(
     icon = Icons.AutoMirrored.Filled.NavigateBefore,
+    labelResId = R.string.ai_game_previous,
     enabled = enabled
-  ) {
-    override val labelResId = R.string.ai_game_previous
-  }
+  )
 
   data class Next(
     override val enabled: Boolean = true
   ) : AiGameBottomBarButton(
     icon = Icons.AutoMirrored.Filled.NavigateNext,
+    labelResId = R.string.ai_game_next,
     enabled = enabled
-  ) {
-    override val labelResId = R.string.ai_game_next
-  }
+  )
 }
 
 @Composable
@@ -620,8 +613,15 @@ private fun AiGameBottomBar(
     AiGameBottomBarButton.Previous(enabled = state.previousButtonEnabled),
     AiGameBottomBarButton.Next(enabled = state.nextButtonEnabled)
   )
+  val translatedButtons = bottomBarButtons.map { btn ->
+    val text = stringResource(id = btn.labelResId)
+
+    object : BottomBarButton by btn {
+      override val label: String = text
+    }
+  }
   BottomBar(
-    buttons = bottomBarButtons,
+    buttons = translatedButtons,
     bottomText = null,
     onButtonPressed = { button ->
       when (button) {
