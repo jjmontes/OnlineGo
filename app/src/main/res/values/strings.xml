@@ -10,7 +10,7 @@
     <string name="ai_game_pass">Pass</string>
     <string name="ai_game_previous">Previous</string>
     <string name="ai_game_next">Next</string>
-    <string name="that_move_would_repeat_the_board_position_that_s_called_a_ko_and_it_is_not_allowed_try_to_make_another_move_first_preferably_a_threat_that_the_opponent_can_t_ignore">That move would repeat the board position. That\'s called a KO, and it is not allowed. Try to make another move first, preferably a threat that the opponent can\'t ignore.</string>
+    <string name="ko_explanation">That move would repeat the board position. That\'s called a KO, and it is not allowed. Try to make another move first, preferably a threat that the opponent can\'t ignore.</string>
     <string name="illegal_ko_move">Illegal KO move</string>
     <string name="local_ai_game">Local AI Game</string>
     <string name="back">Back</string>

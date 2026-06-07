@@ -285,7 +285,7 @@ private fun AiGameUI(
           Text("OK")
         }
       },
-      text = { Text(stringResource(R.string.that_move_would_repeat_the_board_position_that_s_called_a_ko_and_it_is_not_allowed_try_to_make_another_move_first_preferably_a_threat_that_the_opponent_can_t_ignore)) },
+      text = { Text(stringResource(R.string.ko_explanation)) },
       title = { Text(stringResource(R.string.illegal_ko_move), style = MaterialTheme.typography.titleLarge) },
     )
   }
