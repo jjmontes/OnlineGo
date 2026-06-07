@@ -1,6 +1,5 @@
 package io.zenandroid.onlinego.ui.screens.mygames
 
-import android.content.Context
 import android.util.Log
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
@@ -68,7 +67,6 @@ import java.util.Locale
 import kotlin.coroutines.cancellation.CancellationException
 
 class MyGamesViewModel(
-  private val context: Context,
   private val userSessionRepository: UserSessionRepository,
   private val finishedGamesRepository: FinishedGamesRepository,
   private val activeGamesRepository: ActiveGamesRepository,
@@ -112,7 +110,7 @@ class MyGamesViewModel(
                 playOnlineEnabled = false,
                 customGameEnabled = false,
                 loginPromptVisible = true,
-                headerMainText = context.getString(R.string.welcome_to_sente_online_go),
+                headerMainTextResId = R.string.welcome_to_sente_online_go,
                 headerSubText = "Please log in to OGS to play online.",
               )
             }
@@ -587,6 +585,7 @@ data class MyGamesState(
   val playOnlineEnabled: Boolean = true,
   val customGameEnabled: Boolean = true,
   val loginPromptVisible: Boolean = false,
+  val headerMainTextResId: Int? = null,
 )
 
 

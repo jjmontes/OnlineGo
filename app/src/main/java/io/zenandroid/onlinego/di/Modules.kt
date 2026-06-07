@@ -183,7 +183,6 @@ private val viewModelsModule = module {
       get(),
       get(),
       get(),
-      get(),
       OnlineGoApplication.instance.analytics,
       get(),
       get(),
