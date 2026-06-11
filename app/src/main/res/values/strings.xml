@@ -6,6 +6,7 @@
     <string name="login_to_ogs">Login to OGS</string>
     <string name="create_account">Create OGS account</string>
     <string name="welcome_to_sente_online_go">Welcome to Sente Online Go!</string>
+    <string name="login_to_play_online">Please log in to OGS to play online.</string>
     <string name="ai_game_new">New</string>
     <string name="ai_game_pass">Pass</string>
     <string name="ai_game_previous">Previous</string>

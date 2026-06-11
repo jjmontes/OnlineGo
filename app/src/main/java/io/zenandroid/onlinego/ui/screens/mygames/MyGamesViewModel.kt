@@ -111,7 +111,7 @@ class MyGamesViewModel(
                 customGameEnabled = false,
                 loginPromptVisible = true,
                 headerMainTextResId = R.string.welcome_to_sente_online_go,
-                headerSubText = "Please log in to OGS to play online.",
+                headerSubTextResId = R.string.login_to_play_online,
               )
             }
           }
@@ -586,6 +586,7 @@ data class MyGamesState(
   val customGameEnabled: Boolean = true,
   val loginPromptVisible: Boolean = false,
   val headerMainTextResId: Int? = null,
+  val headerSubTextResId: Int? = null,
 )
 
 

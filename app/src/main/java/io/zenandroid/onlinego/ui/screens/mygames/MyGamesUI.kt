@@ -197,7 +197,7 @@ fun MyGamesContent(
       HomeScreenHeader(
         image = state.userImageURL,
         mainText = state.headerMainTextResId?.let { id -> stringResource(id) } ?: state.headerMainText,
-        subText = state.headerSubText,
+        subText = state.headerSubTextResId?.let { id -> stringResource(id) } ?: state.headerSubText,
         offline = !state.online,
       )
     }
