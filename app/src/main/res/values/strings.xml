@@ -48,5 +48,10 @@
     <string name="home_app_open_source_message">This app is an open source, community supported frontend for the OGS (online-go.com) website. You can explore the tutorials and play against the AI, but most features require a free OGS account.</string>
     <string name="home_button_login_ogs">Log in to OGS</string>
     <string name="home_button_signup_ogs">Sign up to OGS</string>
+    <string name="face_to_face_loading">Face to face · Loading</string>
+    <string name="face_to_face_game_over">Face to face · Game Over</string>
+    <string name="face_to_face_white_s_turn">Face to face · White\'s turn</string>
+    <string name="face_to_face_black_s_turn">Face to face · Black\'s turn</string>
+    <string name="face_to_face_default">Face to face</string>
 
 </resources>
