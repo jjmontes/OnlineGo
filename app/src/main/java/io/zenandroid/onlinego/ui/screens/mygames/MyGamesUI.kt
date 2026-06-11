@@ -331,7 +331,7 @@ fun LoggedOutItem(
           .padding(vertical = 32.dp)
       )
       Text(
-        text = "Welcome to Sente!",
+        text = stringResource(R.string.home_welcome_to_sente),
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center,
@@ -340,7 +340,7 @@ fun LoggedOutItem(
           .fillMaxWidth()
       )
       Text(
-        text = "This app is an open source, community supported frontend for the OGS (online-go.com) website. You can explore the tutorials and play against the AI, but most features require a free OGS account.",
+        text = stringResource(R.string.home_app_open_source_message),
         fontSize = 16.sp,
         textAlign = TextAlign.Center,
         modifier = Modifier
@@ -354,7 +354,7 @@ fun LoggedOutItem(
           .fillMaxWidth(),
       ) {
         Text(
-          text = "Log in to OGS",
+          text = stringResource(R.string.home_button_login_ogs),
           fontSize = 16.sp
         )
       }
@@ -365,7 +365,7 @@ fun LoggedOutItem(
           .fillMaxWidth(),
       ) {
         Text(
-          text = "Sign up to OGS",
+          text = stringResource(R.string.home_button_signup_ogs),
           fontSize = 16.sp
         )
       }
