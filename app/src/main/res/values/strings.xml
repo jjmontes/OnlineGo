@@ -53,5 +53,34 @@
     <string name="face_to_face_white_s_turn">Face to face · White\'s turn</string>
     <string name="face_to_face_black_s_turn">Face to face · Black\'s turn</string>
     <string name="face_to_face_default">Face to face</string>
+    <string name="settings_become_a_supporter">Become a supporter</string>
+    <string name="settings_become_a_supporter_description">(ES DES)Become a supporter</string>
+    <string name="settings_section_notifications">Notifications</string>
+    <string name="settings_system_notifications">System notifications</string>
+    <string name="settings_stone_sounds">Stone Sounds</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_board_style">Board style</string>
+    <string name="settings_section_game_settings">Game Settings</string>
+    <string name="settings_show_coordinates">Show Coordinates</string>
+    <string name="settings_show_player_ranks">Show Player Ranks</string>
+    <string name="settings_section_account">Account</string>
+    <string name="settings_logout">Logout</string>
+    <string name="settings_delete_account">Delete account</string>
+    <string name="settings_section_legal">Legal</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_section_debug">Debug</string>
+    <string name="settings_socket_debug">Socket Debug</string>
+    <string name="settings_review_prompt">Review Prompt</string>
+    <string name="settings_build_version">Build no. %1$d</string>
+    <string name="settings_theme_system_default">System Default</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_board_style_light_wood">Light wood</string>
+    <string name="settings_board_style_dark_wood">Dark wood</string>
+    <string name="settings_board_style_cyan">Cyan</string>
+    <string name="settings_board_style_dark_blue">Dark blue</string>
+    <string name="settings_board_style_book">Book</string>
+    <string name="settings_board_style_nocturne">Nocturne</string>
 
 </resources>
